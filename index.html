@@ -10,98 +10,133 @@
 
 <body>
 
+<!-- Navigation Bar -->
 <header>
-    <nav>
-        <a href="#about">About IPL</a>
-        <a href="#matches">Match Schedule</a>
-        <a href="#booking">Book Tickets</a>
-        <a href="#summary">Summary</a>
-        <a href="#mybookings">My Bookings</a>
-        <a href="#guidelines">Guidelines</a>
+    <nav class="navbar">
+        <a href="#" class="logo">IPL 2026</a>
+
+        <button class="menu-toggle" id="menuToggle" type="button"
+                aria-label="Toggle navigation" aria-expanded="false">
+            ☰
+        </button>
+
+        <div class="nav-links" id="navLinks">
+            <a href="#about">About IPL</a>
+            <a href="#matches">Match Schedule</a>
+            <a href="#booking">Book Tickets</a>
+            <a href="#summary">Summary</a>
+            <a href="#mybookings">My Bookings</a>
+            <a href="#guidelines">Guidelines</a>
+        </div>
     </nav>
 </header>
 
+<!-- Hero Section -->
 <section class="hero">
     <h1>IPL 2026 Ticket Booking</h1>
     <p>Book your favourite team's match tickets!</p>
     <a href="#matches">Explore Matches</a>
 </section>
 
+<!-- About IPL -->
 <section id="about">
     <h2>About IPL 2026</h2>
 
-    <h3>Popular Teams</h3>
-    <ul>
-        <li>Chennai Super Kings</li>
-        <li>Mumbai Indians</li>
-        <li>Royal Challengers Bengaluru</li>
-        <li>Kolkata Knight Riders</li>
-        <li>Sunrisers Hyderabad</li>
-    </ul>
+    <div class="about-container">
+        <div>
+            <h3>Popular Teams</h3>
+            <ul>
+                <li>Chennai Super Kings</li>
+                <li>Mumbai Indians</li>
+                <li>Royal Challengers Bengaluru</li>
+                <li>Kolkata Knight Riders</li>
+                <li>Sunrisers Hyderabad</li>
+            </ul>
+        </div>
 
-    <h3>Major Match Venues</h3>
-    <ul>
-        <li>M. A. Chidambaram Stadium</li>
-        <li>Wankhede Stadium</li>
-        <li>M. Chinnaswamy Stadium</li>
-        <li>Eden Gardens</li>
-        <li>Rajiv Gandhi Stadium</li>
-    </ul>
+        <div>
+            <h3>Major Match Venues</h3>
+            <ul>
+                <li>M. A. Chidambaram Stadium</li>
+                <li>Wankhede Stadium</li>
+                <li>M. Chinnaswamy Stadium</li>
+                <li>Eden Gardens</li>
+                <li>Rajiv Gandhi Stadium</li>
+            </ul>
+        </div>
+    </div>
 </section>
 
+<!-- Match Schedule -->
 <section id="matches">
     <h2>Match Schedule</h2>
 
-    <label>Filter by Team:</label>
-    <select>
-        <option>All Teams</option>
-        <option>CSK</option>
-        <option>MI</option>
-        <option>RCB</option>
-        <option>KKR</option>
-        <option>SRH</option>
-    </select>
+    <div class="match-controls">
+        <div>
+            <label for="teamFilter">Filter by Team:</label>
+            <select id="teamFilter">
+                <option value="all">All Teams</option>
+                <option value="CSK">CSK</option>
+                <option value="MI">MI</option>
+                <option value="RCB">RCB</option>
+                <option value="KKR">KKR</option>
+                <option value="SRH">SRH</option>
+            </select>
+        </div>
 
-    <br><br>
+        <div class="view-buttons">
+            <button type="button" id="gridViewBtn">Grid View</button>
+            <button type="button" id="listViewBtn">List View</button>
+        </div>
+    </div>
 
-    <table border="1">
-        <tr>
-            <th>Match Number</th>
-            <th>Teams</th>
-            <th>Date &amp; Time</th>
-            <th>Venue</th>
-            <th>General</th>
-            <th>Premium</th>
-            <th>VIP</th>
-            <th>Action</th>
-        </tr>
+    <div class="match-container grid-view" id="matchContainer">
 
-        <tr>
-            <td>1</td>
-            <td>CSK vs RCB</td>
-            <td>01-04-2026</td>
-            <td>Chennai</td>
-            <td>1000</td>
-            <td>2500</td>
-            <td>5000</td>
-            <td>
-                <a href="#booking" onclick="scrollToBooking(); return false;">Book</a>
-            </td>
-        </tr>
+        <div class="match-card" data-team="CSK RCB">
+            <h3>Match 1</h3>
+            <h2>CSK vs RCB</h2>
+            <p><strong>Date:</strong> 01-04-2026</p>
+            <p><strong>Venue:</strong> Chennai</p>
+            <p><strong>General:</strong> ₹1000</p>
+            <p><strong>Premium:</strong> ₹2500</p>
+            <p><strong>VIP:</strong> ₹5000</p>
+            <a href="#booking" onclick="scrollToBooking(); return false;">Book Tickets</a>
+        </div>
 
-        <tr>
-            <td>2</td>
-            <td>MI vs KKR</td>
-            <td>03-04-2026</td>
-            <td>Mumbai</td>
-            <td>1200</td>
-            <td>3000</td>
-            <td>6000</td>
-            <td>
-                <a href="#booking" onclick="scrollToBooking(); return false;">Book</a>
-            </td>
-        </tr>
-    </table>
+        <div class="match-card" data-team="MI KKR">
+            <h3>Match 2</h3>
+            <h2>MI vs KKR</h2>
+            <p><strong>Date:</strong> 03-04-2026</p>
+            <p><strong>Venue:</strong> Mumbai</p>
+            <p><strong>General:</strong> ₹1200</p>
+            <p><strong>Premium:</strong> ₹3000</p>
+            <p><strong>VIP:</strong> ₹6000</p>
+            <a href="#booking" onclick="scrollToBooking(); return false;">Book Tickets</a>
+        </div>
+
+        <div class="match-card" data-team="RCB SRH">
+            <h3>Match 3</h3>
+            <h2>RCB vs SRH</h2>
+            <p><strong>Date:</strong> 05-04-2026</p>
+            <p><strong>Venue:</strong> Bengaluru</p>
+            <p><strong>General:</strong> ₹1100</p>
+            <p><strong>Premium:</strong> ₹2800</p>
+            <p><strong>VIP:</strong> ₹5500</p>
+            <a href="#booking" onclick="scrollToBooking(); return false;">Book Tickets</a>
+        </div>
+
+        <div class="match-card" data-team="KKR CSK">
+            <h3>Match 4</h3>
+            <h2>KKR vs CSK</h2>
+            <p><strong>Date:</strong> 07-04-2026</p>
+            <p><strong>Venue:</strong> Kolkata</p>
+            <p><strong>General:</strong> ₹1000</p>
+            <p><strong>Premium:</strong> ₹2500</p>
+            <p><strong>VIP:</strong> ₹5000</p>
+            <a href="#booking" onclick="scrollToBooking(); return false;">Book Tickets</a>
+        </div>
+
+    </div>
 </section>
 
 <!-- Booking Form -->
@@ -145,7 +180,6 @@
     <h2>Booking Summary</h2>
 
     <div class="card">
-
         <h3>Selected Match:
             <span id="summaryMatch">CSK vs RCB</span>
         </h3>
@@ -167,10 +201,10 @@
         <h3>Total Amount: ₹
             <span id="totalAmount">1000</span>
         </h3>
-
     </div>
 </section>
 
+<!-- My Bookings -->
 <section id="mybookings">
     <h2>My Ticket Bookings</h2>
 
@@ -185,25 +219,29 @@
     </table>
 </section>
 
+<!-- Ticket Guidelines -->
 <section id="guidelines">
     <h2>Ticket Guidelines</h2>
 
-    <div class="card">
-        <h3>Ticket Verification</h3>
-        <p>Show your valid ticket at the stadium entrance.</p>
-    </div>
+    <div class="guidelines-container">
+        <div class="card">
+            <h3>Ticket Verification</h3>
+            <p>Show your valid ticket at the stadium entrance.</p>
+        </div>
 
-    <div class="card">
-        <h3>ID Proof Requirement</h3>
-        <p>Carry a valid ID proof while entering the stadium.</p>
-    </div>
+        <div class="card">
+            <h3>ID Proof Requirement</h3>
+            <p>Carry a valid ID proof while entering the stadium.</p>
+        </div>
 
-    <div class="card">
-        <h3>Prohibited Items</h3>
-        <p>Do not carry prohibited items inside the stadium.</p>
+        <div class="card">
+            <h3>Prohibited Items</h3>
+            <p>Do not carry prohibited items inside the stadium.</p>
+        </div>
     </div>
 </section>
 
+<!-- Footer -->
 <footer>
     <p>© 2026 IPL Ticket Booking. All Rights Reserved.</p>
 </footer>
