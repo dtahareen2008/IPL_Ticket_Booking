@@ -49,7 +49,6 @@
     </ul>
 </section>
 
-
 <section id="matches">
     <h2>Match Schedule</h2>
 
@@ -105,54 +104,76 @@
     </table>
 </section>
 
+<!-- Booking Form -->
 <section id="booking">
     <h2>Ticket Booking Form</h2>
 
-    <form>
+    <form id="bookingForm">
+
         <label>Match:</label>
-        <select>
-            <option>CSK vs RCB</option>
-            <option>MI vs KKR</option>
+        <select id="matchSelect">
+            <option value="CSK vs RCB">CSK vs RCB</option>
+            <option value="MI vs KKR">MI vs KKR</option>
         </select>
 
         <label>Stand Category:</label>
-        <select>
-            <option>General</option>
-            <option>Premium</option>
-            <option>VIP</option>
+        <select id="standSelect">
+            <option value="General">General</option>
+            <option value="Premium">Premium</option>
+            <option value="VIP">VIP</option>
         </select>
 
         <label>Number of Tickets:</label>
-        <input type="number" min="1">
+        <input type="number" id="ticketQuantity" min="1" value="1">
 
         <label>Name:</label>
-        <input type="text" placeholder="Enter your name">
+        <input type="text" placeholder="Enter your name" required>
 
         <label>Email:</label>
-        <input type="email" placeholder="Enter your email">
+        <input type="email" placeholder="Enter your email" required>
 
         <label>Phone Number:</label>
-        <input type="tel" placeholder="Enter phone number">
+        <input type="tel" placeholder="Enter phone number" required>
 
         <button type="submit">Confirm Booking</button>
+
     </form>
 </section>
 
-
+<!-- Booking Summary -->
 <section id="summary">
     <h2>Booking Summary</h2>
+
     <div class="card">
-        <h3>Selected Match: CSK vs RCB</h3>
-        <p>Stand Category: General</p>
-        <p>Ticket Price: ₹1000</p>
-        <p>Number of Tickets: 1</p>
+
+        <h3>Selected Match:
+            <span id="summaryMatch">CSK vs RCB</span>
+        </h3>
+
+        <p>Stand Category:
+            <span id="summaryStand">General</span>
+        </p>
+
+        <p>Ticket Price: ₹
+            <span id="summaryPrice">1000</span>
+        </p>
+
+        <p>Number of Tickets:
+            <span id="summaryQuantity">1</span>
+        </p>
+
         <hr>
-        <h3>Total Amount: ₹1000</h3>
+
+        <h3>Total Amount: ₹
+            <span id="totalAmount">1000</span>
+        </h3>
+
     </div>
 </section>
 
 <section id="mybookings">
     <h2>My Ticket Bookings</h2>
+
     <table border="1">
         <tr>
             <th>Booking ID</th>
